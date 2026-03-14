@@ -152,10 +152,11 @@ export default function AboutSection() {
             <a
               key={img.src}
               href={img.src}
-              className={`relative overflow-hidden rounded-xl group cursor-pointer ${
-                i === 0 ? "col-span-2 md:col-span-2 row-span-1" : ""
+              className={`block relative overflow-hidden rounded-xl group cursor-pointer ${
+                i === 0
+                  ? "col-span-2 h-56 md:h-80"
+                  : "h-44 md:h-56"
               }`}
-              style={{ aspectRatio: i === 0 ? "16/7" : "4/3" }}
               aria-label={`Powiększ zdjęcie: ${img.alt}`}
             >
               <Image
@@ -163,7 +164,7 @@ export default function AboutSection() {
                 alt={img.alt}
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
-                sizes="(max-width: 768px) 50vw, 33vw"
+                sizes={i === 0 ? "66vw" : "(max-width: 768px) 50vw, 33vw"}
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
             </a>
