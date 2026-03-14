@@ -7,6 +7,7 @@ import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
+
 const gallery = [
   { src: "/images/entrance.png", alt: "Główne wejście do lokali" },
   { src: "/images/front-22.png", alt: "Elewacja frontowa" },
@@ -40,10 +41,9 @@ const usp = [
 
 export default function AboutSection() {
   const sectionRef = useRef<HTMLElement>(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
-  const [lightgalleryLoaded, setLightgalleryLoaded] =
-    useRef(false) as unknown as [boolean, (v: boolean) => void];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const lgInstance = useRef<any>(null);
 
   useEffect(() => {
     const mm = gsap.matchMedia();
@@ -68,7 +68,6 @@ export default function AboutSection() {
         );
       });
 
-      // Stagger na kartach USP
       const cards = cardsRef.current?.querySelectorAll(".usp-card");
       if (cards) {
         gsap.fromTo(
@@ -90,21 +89,28 @@ export default function AboutSection() {
       }
     });
 
-    // Dynamicznie ładuj lightgallery
-    import("lightgallery").then((lg) => {
-      const container = document.getElementById("lg-gallery");
-      if (container && !lightgalleryLoaded) {
-        lg.default(container, {
-          plugins: [],
-          selector: "a",
-          speed: 500,
-          backdropDuration: 300,
-        });
-        setLightgalleryLoaded(true);
-      }
-    });
+    // Dynamicznie ładuj lightgallery (tylko raz)
+    if (!lgInstance.current) {
+      import("lightgallery").then((lg) => {
+        const container = document.getElementById("lg-gallery");
+        if (container && !lgInstance.current) {
+          lgInstance.current = lg.default(container, {
+            plugins: [],
+            selector: "a",
+            speed: 500,
+            backdropDuration: 300,
+          });
+        }
+      });
+    }
 
-    return () => mm.revert();
+    return () => {
+      mm.revert();
+      if (lgInstance.current) {
+        lgInstance.current.destroy?.();
+        lgInstance.current = null;
+      }
+    };
   }, []);
 
   return (
@@ -122,7 +128,6 @@ export default function AboutSection() {
           </p>
           <h2
             id="o-inwestycji-title"
-            ref={titleRef}
             className="gsap-reveal font-display text-4xl md:text-5xl font-semibold text-brand-dark leading-tight mb-6"
           >
             Nowoczesność w kameralnym wydaniu
