@@ -1,0 +1,86 @@
+{
+  "inwestycja": {
+    "nazwa": "Topolska Residence",
+    "podtytul": "Kameralna inwestycja premium w sercu Środy Wielkopolskiej",
+    "opis": "Topolska Residence to ekskluzywny, 4-lokalowy budynek mieszkalny przy głównej ulicy wjazdowej do Środy Wielkopolskiej. Nowoczesna architektura, garaże w bryle, prywatne tarasy i wyjątkowy dach tarasowy – zaledwie 30 km od Poznania.",
+    "lokalizacja": {
+      "ulica": "ul. Topolska",
+      "miasto": "Środa Wielkopolska",
+      "kod": "63-000",
+      "wojewodztwo": "wielkopolskie",
+      "lat": 52.2296,
+      "lng": 17.2756
+    },
+    "hero": {
+      "naglowek": "Topolska Residence",
+      "podtytul": "Twój dom premium – 30 minut od Poznania",
+      "cta": "Sprawdź dostępność"
+    },
+    "zdjecie_hero": "/images/hero.png"
+  },
+  "deweloper": {
+    "nazwa": "[Nazwa dewelopera]",
+    "forma_prawna": "",
+    "krs": "",
+    "nip": "",
+    "regon": "",
+    "telefon": "",
+    "email": "",
+    "adres_siedziby": "",
+    "biuro_sprzedazy": "ul. Topolska, 63-000 Środa Wielkopolska"
+  },
+  "lokale": [
+    {
+      "id": "L01",
+      "nr": "01",
+      "pietro": "Parter",
+      "metraz": 70,
+      "pokoje": 3,
+      "garaz": true,
+      "taras_dachowy": false,
+      "cena_m2": 6500,
+      "cena_total": 455000,
+      "status": "Dostępny",
+      "opis": "Przestronny lokal parterowy z garażem. Możliwość adaptacji na cel usługowy lub biurowy."
+    },
+    {
+      "id": "L02",
+      "nr": "02",
+      "pietro": "Parter",
+      "metraz": 70,
+      "pokoje": 3,
+      "garaz": true,
+      "taras_dachowy": false,
+      "cena_m2": 6500,
+      "cena_total": 455000,
+      "status": "Dostępny",
+      "opis": "Przestronny lokal parterowy z garażem. Możliwość adaptacji na cel usługowy lub biurowy."
+    },
+    {
+      "id": "L03",
+      "nr": "03",
+      "pietro": "I piętro",
+      "metraz": 100,
+      "pokoje": 4,
+      "garaz": false,
+      "taras_dachowy": true,
+      "cena_m2": 7800,
+      "cena_total": 780000,
+      "status": "Dostępny",
+      "opis": "Prestiżowy lokal na I piętrze z ekskluzywnym dachem tarasowym – unikat w okolicy."
+    },
+    {
+      "id": "L04",
+      "nr": "04",
+      "pietro": "I piętro",
+      "metraz": 100,
+      "pokoje": 4,
+      "garaz": false,
+      "taras_dachowy": true,
+      "cena_m2": 7800,
+      "cena_total": 780000,
+      "status": "Dostępny",
+      "opis": "Prestiżowy lokal na I piętrze z ekskluzywnym dachem tarasowym – unikat w okolicy."
+    }
+  ]
+}

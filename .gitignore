@@ -1,0 +1,23 @@
+# Next.js
+node_modules/
+.next/
+out/
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Admin — dane wrażliwe (nie commituj hasha produkcyjnego z config.php)
+# public/admin/config.php  ← odkomentuj jeśli chcesz wykluczyć
+
+# Cenniki (generowane dynamicznie)
+# public/dane-gov/

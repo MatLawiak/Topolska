@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /dane-gov/
+
+Sitemap: https://topolska-resistance.pl/sitemap.xml

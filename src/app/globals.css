@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-dark: #1a1a1a;
+  --brand-cream: #f5f3ef;
+  --brand-wood: #c4956a;
+  --brand-gold: #b8a07a;
+  --brand-light: #fafaf8;
+}
+
+html {
+  scroll-behavior: auto; /* Lenis obsługuje smooth scroll */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--brand-light);
+  color: var(--brand-dark);
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Skip navigation — WCAG */
+.skip-nav {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--brand-dark);
+  color: #fff;
+  padding: 8px 16px;
+  z-index: 9999;
+  transition: top 0.2s;
+}
+.skip-nav:focus {
+  top: 0;
+}
+
+/* Focus visible — WCAG */
+:focus-visible {
+  outline: 2px solid var(--brand-wood);
+  outline-offset: 3px;
+}
+
+/* Gsap reveal utility */
+.gsap-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* Swiper overrides */
+.swiper-pagination-bullet-active {
+  background: var(--brand-wood) !important;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--brand-wood) !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--brand-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--brand-wood);
+  border-radius: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gsap-reveal {
+    opacity: 1;
+    transform: none;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
